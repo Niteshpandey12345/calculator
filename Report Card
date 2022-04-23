@@ -1,0 +1,86 @@
+#include<iostream>
+using namespace std;
+struct student{
+int rollno;
+int  sub1;
+int sub2;
+int sub3;};
+int main()
+{
+    student a[100];
+    int b[100];
+    int i,large1,large2,large3,max,n;
+    cout<<"enter the number of student:";
+    cin>>n;
+    for(i=1;i<=n;i++)
+    { cout<<"Enter "<<i<<" student details="<<endl;
+    cout<<"Enter "<<i<<" student roll number =";
+        cin>>a[i].rollno;
+        cout<<"Enter "<<i<<" student sub1 marks=";
+        cin>>a[i].sub1;
+        cout<<"Enter "<<i<<" student sub2 marks=";
+         cin>>a[i].sub2;
+         cout<<"Enter "<<i<<" student sub3 marks=";
+        cin>>a[i].sub3;}
+        large1=a[1].sub1;
+        large2=a[1].sub2;
+        large3=a[1].sub3;
+        for(i=1;i<=n;i++)
+      {
+        if(large1<a[i].sub1)
+        {
+            large1=a[i].sub1;
+        }
+          if(large2<a[i].sub2)
+        {
+            large2=a[i].sub2;
+        }
+        if(large3<a[i].sub3)
+        {
+            large3=a[i].sub3;
+        }
+
+    }
+     for(i=1;i<=n;i++)
+    {    cout<<"THE "<<i<<" STUDENT DETAILS:"<<endl;
+        cout<<"THE STUDENT ROLL NUMBER:"<<a[i].rollno<<endl;;
+        cout<<"THE STUDENT FIRST SUBJECT MARKS:"<<a[i].sub1<<endl;
+         cout<<"THE STUDENT SECOND SUBJECT MARKS:"<<a[i].sub2<<endl;
+        cout<<"THE STUDENT THIRD SUBJECT MARKS:"<<a[i].sub3<<endl;
+         cout<<"THE TOTAL MARKS:"<<a[i].sub1+a[i].sub2+a[i].sub3<<endl;
+    }
+
+    max=a[1].sub1+a[1].sub2+a[1].sub3;
+    for(i=1;i<=n;i++)
+      {
+        if(max<a[i].sub1+a[i].sub2+a[i].sub3)
+        {
+            max=a[i].sub1+a[i].sub2+a[i].sub3;
+        }}
+    cout<<"LARGEST MARKS IN SUBJECT 1:"<<large1<<endl;
+    cout<<"LARGEST MARKS IN SUBJECT 2:"<<large2<<endl;
+    cout<<"LARGEST MARKS IN SUBJECT 3:"<<large3<<endl;
+     cout<<"HIGHEST TOTAL MARKS :"<<max<<endl;
+     for(i=1;i<=n;i++)
+     {
+         if(large1==a[i].sub1)
+         {
+             cout<<"THE ROLL NUMBER OF STUDENT WHO HIGHEST SCORED IN SUBJECT 1:"<<a[i].rollno<<endl;
+         }
+          if(large2==a[i].sub2)
+         {
+             cout<<"THE ROLL NUMBER OF STUDENT WHO HIGHEST SCORED IN SUBJECT 2:"<<a[i].rollno<<endl;
+         }
+          if(large2==a[i].sub3)
+         {
+             cout<<"THE ROLL NUMBER OF STUDENT WHO HIGHEST SCORED IN SUBJECT 2:"<<a[i].rollno<<endl;
+         }
+          if(large1==a[i].sub1)
+         {
+             cout<<"THE ROLL NUMBER OF STUDENT WHO HIGHEST SCORED IN SUBJECT IS :"<<a[i].rollno<<endl;
+         }
+          if(max==a[i].sub1+a[i].sub2+a[i].sub3)
+         {
+             cout<<"THE ROLL NUMBER OF STUDENT WHO HAS HIGHEST TOTAL SCORE IS:"<<a[i].rollno<<endl;
+         }
+     }}
